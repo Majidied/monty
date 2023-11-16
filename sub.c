@@ -8,12 +8,9 @@
 void f_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *aux;
-	int sus, nodes;
+	int sus,
 
-	aux = *head;
-	for (nodes = 0; aux != NULL; nodes++)
-		aux = aux->next;
-	if (nodes < 2)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too shorrt\n", counter);
 		fclose(bus.file);
